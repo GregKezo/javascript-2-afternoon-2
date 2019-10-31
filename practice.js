@@ -197,11 +197,16 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //Code Here
 
 function removeItem(myGroceryList, toRemove) {
-
+  for (let i = 0 ; i < myGroceryList.length ; i++) {
+    var updatedList = []
+    myGroceryList[i] !== toRemove ? updatedList.push(myGroceryList[i]) : null;
+  }
+  myGroceryList = updatedList
+  return myGroceryList
 }
 
 function addItem(myGroceryList, toAdd) {
-  
+
 }
 
 ////////// PROBLEM 9 //////////
@@ -212,7 +217,13 @@ function addItem(myGroceryList, toAdd) {
 
 //Code Here
 
-
+function maker() {
+  var array1 = [];
+  for ( i = 1 ; i < 216 ; i ++) {
+    array1.push(i)
+  }
+  return array1
+}
 
 ////////// PROBLEM 10 //////////
 
@@ -228,7 +239,15 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   
 //Code Here
 
-
+function addTen(numbers) {
+  let numNums = []
+  for (i = 0; i < numbers.length ; i++ ) {
+    let newNum = parseInt(numbers[i]) + 10
+    numNums.push(newNum)
+  }
+  numbers = numNums
+  return numbers
+}
 
 ////////// PROBLEM 11 //////////
 
@@ -253,7 +272,9 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
-
+function longer(arr1, arr2) {
+  return arr1.length > arr2.length ? arr1 : arr2
+}
 
 /*
   As a continuation of the previous problem, write another function called 'both'.
@@ -265,6 +286,15 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
+function both(arr1, arr2) {
+  var newArray = [];
+  for (var i = 0 ; i < arr1.length ; i++) {
+    for (var j = 0 ; j < arr2.length ; j++) {
+      arr1[i] === arr2[j] ? newArray.push(arr2[j]) : null;
+    }
+  }
+  return newArray
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -306,7 +336,12 @@ var colt = {
 
 //Code Here
 
+devMountainEmployees.push(joe)
+devMountainEmployees.push(cahlan)
+devMountainEmployees.push(ryan)
+devMountainEmployees.push(colt)
 
+console.log(devMountainEmployees)
 
 /*
   Now let's say Cahlan has to take a leave of absence.
@@ -315,7 +350,14 @@ var colt = {
 
 //Code Here
 
+function leaveOfAbsence(arr) {
+  for (i = 0 ; i < arr.length ; i++) {
+    arr[i].name === 'Cahlan' ? arr.splice(i,1) : null;
+  }
+  return arr
+}
 
+leaveOfAbsence(devMountainEmployees);
 
 ////////// PROBLEM 13 //////////
 
@@ -327,6 +369,7 @@ var colt = {
 
 //Code Here
 
+var users = []
 
 
 /*
@@ -348,7 +391,23 @@ var user1 = {
 
 //Code Here
 
+var user2 = {
+    name: 'Leeroy Jenkins',
+    email: 'leeroy.jenkins@gmail.com',
+    password: 'plaintext',
+    username: 'Repeating3'
+}
 
+var user3 = {
+    name: 'Goodname Lastname'
+    ,email: 'Goodname@goodname.com'
+    ,password: 'Goodname2'
+    ,username: 'Goodname1'
+}
+
+users.push(user1);
+users.push(user2);
+users.push(user3);
 
 /*
   Now you have a very common data structure. 
@@ -362,8 +421,14 @@ var user1 = {
 
 //Code Here
 
+function deleteUser(arr) {
+  for (i = 0 ; i < arr.length ; i++) {
+    arr[i].email === 'mark.mciver@devmounta.in' ? arr.splice(i, 1) : null
+  }
+  return arr
+}
 
-
+deleteUser(users)
 /*
   The activity we just did is very much how data works in 'the real world'.
 */
