@@ -197,16 +197,23 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //Code Here
 
 function removeItem(myGroceryList, toRemove) {
-  for (let i = 0 ; i < myGroceryList.length ; i++) {
-    var updatedList = []
-    myGroceryList[i] !== toRemove ? updatedList.push(myGroceryList[i]) : null;
+  if (myGroceryList && toRemove) {
+    for (let i = 0 ; i < myGroceryList.length ; i++) {
+      myGroceryList[i] === toRemove ? myGroceryList.splice(i,1) : null;
+    }    
+  } else {
+  myGroceryList = []
   }
-  myGroceryList = updatedList
   return myGroceryList
 }
 
 function addItem(myGroceryList, toAdd) {
-
+  if (myGroceryList && toAdd) {
+    myGroceryList.push(toAdd)
+  } else {
+    myGroceryList = []
+  }
+  return myGroceryList
 }
 
 ////////// PROBLEM 9 //////////
